@@ -60,7 +60,7 @@ namespace QoLX.Modules
 			var index = il.FindIndex(instruction => instruction.opcode == OpCodes.Call && (instruction.operand as MethodInfo)?.Name == nameof(World.IsLandProtectionValidForPlayer));
 			if (index <= 0)
 			{
-				Debug.LogError($"[{nameof(QoLX)}.{nameof(PartyLandClaim)}] Failed transpiling 'IsMyLandClaimInChunk_Patch' not found!");
+				Debug.LogError($"[QoLX.{nameof(PartyLandClaim)}] Failed transpiling 'IsMyLandClaimInChunk_Patch' not found!");
 				return il;
 			}
 			

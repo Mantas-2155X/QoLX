@@ -18,7 +18,9 @@ namespace QoLX
 		{
 			{nameof(VehicleHonk), new Tuple<string, object?>("Switch horn and repair action locations to prevent vehicles being accidentally repaired", true)},
 			{nameof(PartyLandClaim), new Tuple<string, object?>("Allow party members to interact with land claimed blocks", true)},
-			{nameof(QuietTrading), new Tuple<string, object?>("Stop the trader from rambling during trading", true)}
+			{nameof(QuietTrading), new Tuple<string, object?>("Stop the trader from rambling during trading", true)},
+			{nameof(BugSquasher), new Tuple<string, object?>("Fix various bugs left in the game code", true)},
+			{nameof(EfficientCooking), new Tuple<string, object?>("Turn off cookers, forges, etc. once there is nothing else left to cook", true)},
 		};
 		
 		public string ConfigPath = "config.json";
@@ -79,7 +81,7 @@ namespace QoLX
 			var json = JsonConvert.SerializeObject(configFile, Formatting.Indented);
 			if (string.IsNullOrEmpty(json))
 			{
-				Debug.LogError($"[{nameof(QoLX)}] Failed serializing config");
+				Debug.LogError("[QoLX] Failed serializing config");
 				return;
 			}
 			

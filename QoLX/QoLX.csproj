@@ -6,8 +6,8 @@
         <LangVersion>8</LangVersion>
         <Company>2155X</Company>
         <Product>QoLX</Product>
-        <AssemblyVersion>0.2.2.0</AssemblyVersion>
-        <FileVersion>0.2.2.0</FileVersion>
+        <AssemblyVersion>0.3.0.0</AssemblyVersion>
+        <FileVersion>0.3.0.0</FileVersion>
         <RootNamespace>QoLX</RootNamespace>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
