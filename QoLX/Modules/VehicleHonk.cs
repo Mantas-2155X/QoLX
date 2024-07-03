@@ -1,4 +1,6 @@
+using System;
 using HarmonyLib;
+using UnityEngine;
 
 namespace QoLX.Modules
 {
@@ -20,6 +22,9 @@ namespace QoLX.Modules
 		[HarmonyPostfix, HarmonyPatch(typeof(EntityVehicle), nameof(EntityVehicle.GetActivationCommands))]
 		public static void GetActivationCommands_Patch(EntityActivationCommand[] __result)
 		{
+			if (__result.Length == 0)
+				return;
+			
 			var honkAction = __result[honkIndex];
 			var repairAction = __result[repairIndex];
 

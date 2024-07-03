@@ -14,10 +14,11 @@ namespace QoLX
 	{
 		public readonly List<IModule> Modules = new List<IModule>();
 
-		public readonly Dictionary<string, Tuple<string, object?>> ConfigEntries = new Dictionary<string, Tuple<string, object?>>
+		public static readonly Dictionary<string, Tuple<string, object?>> ConfigEntries = new Dictionary<string, Tuple<string, object?>>
 		{
 			{nameof(VehicleHonk), new Tuple<string, object?>("Switch horn and repair action locations to prevent vehicles being accidentally repaired", true)},
-			{nameof(PartyLandClaim), new Tuple<string, object?>("Allow party members to interact with land claimed blocks", true)}
+			{nameof(PartyLandClaim), new Tuple<string, object?>("Allow party members to interact with land claimed blocks", true)},
+			{nameof(QuietTrading), new Tuple<string, object?>("Stop the trader from rambling during trading", true)}
 		};
 		
 		public string ConfigPath = "config.json";
@@ -55,7 +56,7 @@ namespace QoLX
 			}
 
 			foreach (var configEntry in configFile.ConfigEntries)
-				ConfigEntries[configEntry.Key] = new Tuple<string, object?>(configEntry.Description, configEntry.Value);
+				ConfigEntries[configEntry.Key] = new Tuple<string, object?>(ConfigEntries[configEntry.Key].Item1, configEntry.Value);
 			
 			WriteConfig();
 		}
