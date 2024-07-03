@@ -18,9 +18,17 @@ namespace QoLX
 		{
 			{nameof(VehicleHonk), new Tuple<string, object?>("Switch horn and repair action locations to prevent vehicles being accidentally repaired", true)},
 			{nameof(PartyLandClaim), new Tuple<string, object?>("Allow party members to interact with land claimed blocks", true)},
-			{nameof(QuietTrading), new Tuple<string, object?>("Stop the trader from rambling during trading", true)},
+			{nameof(QuietTrading), new Tuple<string, object?>("Stop select traders from rambling during trading", true)},
+			{QuietTrading.MutedLinesSetting, new Tuple<string, object?>("Muted lines per-trader", new List<QuietTrading.SQuietTraderInfo>
+			{
+				new QuietTrading.SQuietTraderInfo
+				{
+					Trader = "traderrekt",
+					MutedLines = new [] { "trade", "sale_accepted", "sale_declined" }
+				}
+			})},
 			{nameof(BugSquasher), new Tuple<string, object?>("Fix various bugs left in the game code", true)},
-			{nameof(EfficientCooking), new Tuple<string, object?>("Turn off cookers, forges, etc. once there is nothing else left to cook", true)},
+			{nameof(EfficientCooking), new Tuple<string, object?>("Turn off cookers, forges, etc. once there is nothing else left to cook", true)}
 		};
 		
 		public string ConfigPath = "config.json";

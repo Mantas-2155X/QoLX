@@ -12,8 +12,22 @@
     },
     {
       "Key": "QuietTrading",
-      "Description": "Stop the trader from rambling during trading",
+      "Description": "Stop select traders from rambling during trading",
       "Value": true
+    },
+    {
+      "Key": "QuietTrading_MutedLines",
+      "Description": "Muted lines per-trader",
+      "Value": [
+        {
+          "Trader": "traderrekt",
+          "MutedLines": [
+            "trade",
+            "sale_accepted",
+            "sale_declined"
+          ]
+        }
+      ]
     },
     {
       "Key": "BugSquasher",
