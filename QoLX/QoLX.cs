@@ -98,8 +98,9 @@ namespace QoLX
 			
 			foreach (var type in moduleTypes)
 			{
-				if (type.IsAssignableFrom(typeof(IModule)) && type != typeof(BaseModule) && type != typeof(IModule))
+				if (typeof(IModule).IsAssignableFrom(type) && type != typeof(BaseModule) && type != typeof(IModule))
 				{
+					Debug.Log($"[QoLX] Found module {type.Name}");
 					Modules.Add((IModule)Activator.CreateInstance(type));
 				}
 			}
